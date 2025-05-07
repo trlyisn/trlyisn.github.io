@@ -136,3 +136,22 @@ footer {
   background-color: var(--text-color);
   color: var(--bg-color);
 }
+
+form input[type="search"] {
+  border: none;
+  box-sizing: border-box;
+  font-weight: bold;
+  text-align: center;
+  font: inherit;
+  background-color: #e9e9e9;
+  padding: .5em 1em;
+}
+
+form input::placeholder {
+  color: #aea7a7;
+  opacity: 1;
+}
+
+form:focus-within input::placeholder {
+  opacity: 0;
+}
