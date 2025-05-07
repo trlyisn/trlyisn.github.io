@@ -1,0 +1,138 @@
+/* --- Theme Variables --- */
+:root {
+  /* Light Mode (Default) */
+  --bg-color: #ffffff;
+  --text-color: #222222; /* Dark grey for text */
+  --link-color: #222222;
+  --link-hover-color: #0066cc; /* A subtle blue for hover */
+  --heading-color: #000000; /* Black for headings */
+  --image-border: 1px solid #ccc; /* Light border for image if needed */
+}
+
+body.dark-mode {
+  /* Dark Mode */
+  --bg-color: #1e1e1e;
+  --text-color: #e0e0e0; /* Light grey for text */
+  --link-color: #e0e0e0;
+  --link-hover-color: #87ceeb; /* Sky blue for hover in dark mode */
+  --heading-color: #ffffff; /* White for headings */
+  --image-border: 1px solid #444;
+}
+
+/* --- General Styles --- */
+body {
+  font-family: "Courier New", Courier, monospace; /* Classic monospace font */
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align to top */
+  min-height: 100vh;
+  font-size: 16px; /* Base font size */
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+  max-width: 800px; /* Adjust as needed */
+  width: 100%;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h1 {
+  font-size: 2em; /* Larger for the main title */
+  font-weight: bold;
+  color: var(--heading-color);
+  margin: 0;
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: space-between; /* Puts links on left, image on right */
+  gap: 30px; /* Space between links section and image */
+}
+
+.links-columns {
+  display: flex;
+  gap: 40px; /* Space between the two columns of links */
+  flex-grow: 1; /* Allow links section to take available space */
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between categories within a column */
+}
+
+.link-category h3 {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: var(--heading-color);
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.link-category ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.link-category li {
+  margin-bottom: 5px;
+}
+
+.link-category a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.link-category a:hover,
+.link-category a:focus {
+  color: var(--link-hover-color);
+  /* text-decoration: underline; */ /* Optional: underline on hover */
+}
+
+.image-container {
+  flex-shrink: 0; /* Prevent image container from shrinking */
+  /* The image in the example is roughly 100px wide. Adjust as needed. */
+}
+
+.image-container img {
+  display: block;
+  max-width: 200px; /* Set a max-width, adjust to match example */
+  height: auto; /* Maintain aspect ratio */
+  border: var(--image-border);
+  transition: border-color 0.3s ease;
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--text-color); /* Subtle separator */
+  opacity: 0.7;
+}
+
+#theme-toggle {
+  font-family: "Courier New", Courier, monospace;
+  background-color: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--text-color);
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#theme-toggle:hover {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+}
